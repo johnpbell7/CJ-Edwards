@@ -1130,8 +1130,8 @@ function FloatingNav() {
       </div>
 
       {/* Floating pill nav — minimal three-part: MENU | wordmark | BOOK */}
-      <nav className="fixed bottom-4 inset-x-3 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom">
-        <div className="nav-glass rounded-2xl md:rounded-full p-1.5 md:p-2 flex items-center justify-between md:justify-start gap-1.5 md:gap-2 w-full md:w-auto">
+      <nav className="fixed bottom-0 inset-x-0 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom">
+        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)]">
 
           {/* Menu button — animated hamburger + label */}
           <button

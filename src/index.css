@@ -412,6 +412,38 @@
     .glow-orb, .hero-glow { animation: none; }
   }
 
+  /* Mobile — crank glow brightness & size so orbs still read on narrow viewports */
+  @media (max-width: 768px) {
+    .glow-orb.a {
+      width: 130vw; height: 130vw;
+      top: -30%; right: -35%;
+      filter: blur(70px);
+      background: radial-gradient(circle, rgba(232, 103, 60, 1) 0%, rgba(232, 103, 60, 0.75) 28%, rgba(232, 103, 60, 0.25) 55%, transparent 78%);
+    }
+    .glow-orb.b {
+      width: 100vw; height: 100vw;
+      bottom: -25%; left: -25%;
+      filter: blur(65px);
+      background: radial-gradient(circle, rgba(232, 103, 60, 1) 0%, rgba(196, 154, 90, 0.55) 35%, rgba(196, 154, 90, 0.15) 60%, transparent 80%);
+    }
+    .glow-orb.c {
+      width: 85vw; height: 85vw;
+      top: 15%; left: 10%;
+      filter: blur(60px);
+      background: radial-gradient(circle, rgba(232, 103, 60, 0.95) 0%, rgba(232, 103, 60, 0.35) 40%, transparent 75%);
+    }
+    .ambient-glow {
+      filter: blur(60px);
+    }
+    .particle {
+      width: 3.5px; height: 3.5px;
+      box-shadow: 0 0 18px rgba(232, 103, 60, 0.85);
+    }
+    .hero-tint::after {
+      background: linear-gradient(180deg, rgba(12,11,10,0.15) 0%, rgba(12,11,10,0.05) 40%, rgba(12,11,10,0.8) 100%);
+    }
+  }
+
   /* Ticker underline accent */
   .accent-dot {
     width: 6px; height: 6px; border-radius: 50%;

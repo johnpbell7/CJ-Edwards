@@ -307,7 +307,7 @@ function Hero() {
       <div className="hero-tint absolute inset-0"></div>
 
       {/* Floating amber particles drifting upward */}
-      <Particles count={18} className="z-[5]" />
+      <Particles count={28} className="z-[5]" />
 
       {/* Hero content — tight on mobile, spaced on desktop */}
       <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end md:justify-between px-6 md:px-10 pt-24 md:pt-10 pb-32 md:pb-32 gap-10 md:gap-0">
@@ -1014,6 +1014,8 @@ function Footer() {
 function FloatingNav() {
   const [active, setActive] = useState("top");
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
     const ids = ["top", ...nav.map(n => n.href.slice(1))];
@@ -1027,6 +1029,21 @@ function FloatingNav() {
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  useEffect(() => {
+    lastY.current = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (open) { setHidden(false); lastY.current = y; return; }
+      if (y < 80) { setHidden(false); lastY.current = y; return; }
+      const delta = y - lastY.current;
+      if (delta > 6) setHidden(true);
+      else if (delta < -6) setHidden(false);
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, [open]);
 
   return (
@@ -1149,13 +1166,15 @@ function FloatingNav() {
       </div>
 
       {/* Floating pill nav — minimal three-part: MENU | wordmark | BOOK */}
-      <nav className="fixed bottom-0 inset-x-0 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom">
-        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-stretch md:items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)]">
+      <nav
+        className={`fixed bottom-0 inset-x-0 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom transition-transform duration-500 ease-[cubic-bezier(.2,.6,.2,1)] ${hidden ? "translate-y-full" : "translate-y-0"}`}
+      >
+        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)] max-w-full overflow-hidden">
 
           {/* Menu button — animated hamburger + label */}
           <button
             onClick={() => setOpen(!open)}
-            className="mag-btn relative bg-[var(--accent)] text-[#1a0f08] rounded-xl md:rounded-full pl-4 pr-5 py-4 md:py-3 md:pl-4 md:pr-5 flex items-center gap-3 md:gap-2.5 font-display text-base md:text-sm tracking-wide flex-1 md:flex-initial min-w-[120px] md:min-w-[110px] justify-center md:justify-start"
+            className="mag-btn relative bg-[var(--accent)] text-[#1a0f08] rounded-xl md:rounded-full pl-4 pr-5 py-3.5 md:py-3 md:pl-4 md:pr-5 flex items-center gap-2.5 font-display text-sm md:text-sm tracking-wide min-w-[108px] md:min-w-[110px] justify-center md:justify-start shrink-0"
           >
             <span className="flex flex-col gap-[4px] md:gap-[3px] w-5 md:w-4">
               <span className={`block h-[2.5px] md:h-[2px] bg-[#1a0f08] transition-all duration-400 ease-[cubic-bezier(.2,.6,.2,1)] ${open ? "translate-y-[6.5px] md:translate-y-[5px] rotate-45" : ""}`}></span>
@@ -1166,8 +1185,8 @@ function FloatingNav() {
           </button>
 
           {/* Center wordmark */}
-          <a href="#top" className="flex items-center gap-2 md:gap-2.5 px-2 md:px-5 py-2 text-[var(--ink)] flex-shrink-0">
-            <Logo size={32} color="var(--ink)" className="md:hidden" />
+          <a href="#top" className="flex items-center gap-2 md:gap-2.5 px-1 md:px-5 py-2 text-[var(--ink)] shrink min-w-0">
+            <Logo size={28} color="var(--ink)" className="md:hidden shrink-0" />
             <Logo size={26} color="var(--ink)" className="hidden md:block" />
             <span className="font-display text-sm tracking-wide hidden xs:inline">CJ EDWARDS</span>
           </a>
@@ -1175,7 +1194,7 @@ function FloatingNav() {
           {/* Contact button */}
           <a
             href="#book"
-            className="mag-btn relative bg-transparent border border-[var(--line)] text-[var(--ink)] rounded-xl md:rounded-full px-5 md:px-5 py-4 md:py-3 font-display text-base md:text-sm tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300 flex-1 md:flex-initial min-w-[100px] md:min-w-[80px] text-center flex items-center justify-center"
+            className="mag-btn relative bg-transparent border border-[var(--line)] text-[var(--ink)] rounded-xl md:rounded-full px-4 md:px-5 py-3.5 md:py-3 font-display text-sm md:text-sm tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300 min-w-[82px] md:min-w-[80px] text-center flex items-center justify-center shrink-0"
           >
             BOOK
           </a>

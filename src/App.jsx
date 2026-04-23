@@ -310,7 +310,7 @@ function Hero() {
       <Particles count={28} className="z-[5]" />
 
       {/* Hero content — tight on mobile, spaced on desktop */}
-      <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end md:justify-between px-6 md:px-10 pt-24 md:pt-10 pb-32 md:pb-32 gap-10 md:gap-0">
+      <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end md:justify-between px-5 md:px-10 pt-24 md:pt-10 pb-32 md:pb-32 gap-10 md:gap-0">
 
         {/* Top rail — desktop only (mobile has BrandMark fixed top-left) */}
         <div className="hidden md:flex justify-end items-start gap-4">
@@ -385,7 +385,7 @@ function Marquee() {
 
 function Work() {
   return (
-    <section id="work" className="relative px-6 md:px-10 py-28 md:py-40">
+    <section id="work" className="relative px-5 md:px-10 py-28 md:py-40">
       <div className="grid md:grid-cols-12 gap-10 md:gap-16">
         <div className="md:col-span-4 md:sticky md:top-28 self-start">
           <Reveal>
@@ -394,7 +394,7 @@ function Work() {
               <span>The work</span>
               <WaveAccent bars={4} />
             </div>
-            <h2 className="font-display display-tight text-[2.75rem] leading-[0.95] md:text-6xl md:leading-[0.85] mb-8">
+            <h2 className="font-display display-tight text-[13.5vw] leading-[0.9] md:text-6xl md:leading-[0.85] mb-8">
               Rooms read.<br />Floors moved.<br /><span className="text-[var(--accent)]">Memories made.</span>
             </h2>
             <p className="text-[var(--ink-dim)] leading-relaxed max-w-[40ch] mb-10">
@@ -461,7 +461,7 @@ function Work() {
 function Mixes() {
   const [playing, setPlaying] = useState(null);
   return (
-    <section id="mixes" className="relative px-6 md:px-10 py-28 md:py-40 border-t border-[var(--line)]">
+    <section id="mixes" className="relative px-5 md:px-10 py-28 md:py-40 border-t border-[var(--line)]">
       <Reveal>
         <div className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--ink-dim)] mb-8 flex items-center gap-3">
           <span className="text-[var(--accent)]">02 —</span>
@@ -472,7 +472,7 @@ function Mixes() {
 
       <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-24 items-end mb-16 md:mb-24">
         <Reveal>
-          <h2 className="font-display display-tight text-6xl md:text-[9vw]">
+          <h2 className="font-display display-tight text-[15vw] md:text-[9vw]">
             Press <span className="text-[var(--accent)]">play.</span><br />Pour a drink.
           </h2>
         </Reveal>
@@ -551,7 +551,7 @@ function Mixes() {
 
 function Shows() {
   return (
-    <section id="shows" className="relative px-6 md:px-10 py-28 md:py-40 border-t border-[var(--line)] bg-[var(--bg-2)] overflow-hidden">
+    <section id="shows" className="relative px-5 md:px-10 py-28 md:py-40 border-t border-[var(--line)] bg-[var(--bg-2)] overflow-hidden">
       <div
         className="ambient-glow"
         style={{
@@ -571,7 +571,7 @@ function Shows() {
         </Reveal>
 
         <Reveal>
-          <h2 className="font-display display-tight text-6xl md:text-[9vw] mb-16 md:mb-24">
+          <h2 className="font-display display-tight text-[18vw] md:text-[9vw] mb-16 md:mb-24">
             Where <span className="text-[var(--accent)]">next.</span>
           </h2>
         </Reveal>
@@ -700,7 +700,7 @@ function Weddings() {
         {/* Text side */}
         <div className="px-6 md:px-16 py-20 md:py-32 flex flex-col justify-center">
           <Reveal>
-            <h2 className="font-display display-tight text-5xl md:text-6xl lg:text-7xl mb-10">
+            <h2 className="font-display display-tight text-[14vw] md:text-6xl lg:text-7xl mb-10">
               Your day.<br /><span className="text-[var(--accent)]">Scored properly.</span>
             </h2>
           </Reveal>
@@ -755,7 +755,7 @@ function Weddings() {
 
 function Press() {
   return (
-    <section className="relative px-6 md:px-10 py-28 md:py-40 border-t border-[var(--line)] overflow-hidden">
+    <section className="relative px-5 md:px-10 py-28 md:py-40 border-t border-[var(--line)] overflow-hidden">
       {/* Ambient glow behind */}
       <div
         className="ambient-glow"
@@ -809,7 +809,7 @@ function Book() {
   };
 
   return (
-    <section id="book" className="relative px-6 md:px-10 py-28 md:py-40 border-t border-[var(--line)] bg-[var(--bg-2)] overflow-hidden">
+    <section id="book" className="relative px-5 md:px-10 py-28 md:py-40 border-t border-[var(--line)] bg-[var(--bg-2)] overflow-hidden">
       <div
         className="ambient-glow"
         style={{
@@ -827,7 +827,7 @@ function Book() {
               <span>Bookings</span>
               <WaveAccent bars={4} />
             </div>
-            <h2 className="font-display display-tight text-6xl md:text-7xl mb-10">
+            <h2 className="font-display display-tight text-[16vw] md:text-7xl mb-10">
               Tell me<br />about<br /><span className="text-[var(--accent)]">the night.</span>
             </h2>
             <p className="text-[var(--ink-dim)] leading-relaxed max-w-[38ch] mb-12">
@@ -909,7 +909,7 @@ function Book() {
 
 function Footer() {
   return (
-    <footer className="relative px-6 md:px-10 pt-20 pb-48 md:pb-40 border-t border-[var(--line)] overflow-hidden">
+    <footer className="relative px-5 md:px-10 pt-20 pb-48 md:pb-40 border-t border-[var(--line)] overflow-hidden">
       {/* Ambient glow */}
       <div
         className="ambient-glow"
@@ -1119,7 +1119,7 @@ function FloatingNav() {
                 {/* Shimmer sweep on hover */}
                 <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
 
-                <div className="relative flex items-center justify-between px-6 md:px-10 py-5 md:py-7">
+                <div className="relative flex items-center justify-between px-5 md:px-10 py-5 md:py-7">
                   <div className="flex items-center gap-4 md:gap-6">
                     <span className="font-mono text-xs md:text-sm opacity-50">0{i + 1}</span>
                     <span className="text-3xl md:text-5xl lg:text-6xl">{n.label.toUpperCase()}</span>

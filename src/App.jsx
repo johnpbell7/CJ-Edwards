@@ -394,7 +394,7 @@ function Work() {
               <span>The work</span>
               <WaveAccent bars={4} />
             </div>
-            <h2 className="font-display display-tight text-4xl md:text-6xl mb-8">
+            <h2 className="font-display display-tight text-[2.75rem] leading-[0.95] md:text-6xl md:leading-[0.85] mb-8">
               Rooms read.<br />Floors moved.<br /><span className="text-[var(--accent)]">Memories made.</span>
             </h2>
             <p className="text-[var(--ink-dim)] leading-relaxed max-w-[40ch] mb-10">
@@ -472,7 +472,7 @@ function Mixes() {
 
       <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-24 items-end mb-16 md:mb-24">
         <Reveal>
-          <h2 className="font-display display-tight text-5xl md:text-[9vw]">
+          <h2 className="font-display display-tight text-6xl md:text-[9vw]">
             Press <span className="text-[var(--accent)]">play.</span><br />Pour a drink.
           </h2>
         </Reveal>
@@ -571,7 +571,7 @@ function Shows() {
         </Reveal>
 
         <Reveal>
-          <h2 className="font-display display-tight text-5xl md:text-[9vw] mb-16 md:mb-24">
+          <h2 className="font-display display-tight text-6xl md:text-[9vw] mb-16 md:mb-24">
             Where <span className="text-[var(--accent)]">next.</span>
           </h2>
         </Reveal>
@@ -700,7 +700,7 @@ function Weddings() {
         {/* Text side */}
         <div className="px-6 md:px-16 py-20 md:py-32 flex flex-col justify-center">
           <Reveal>
-            <h2 className="font-display display-tight text-4xl md:text-6xl lg:text-7xl mb-10">
+            <h2 className="font-display display-tight text-5xl md:text-6xl lg:text-7xl mb-10">
               Your day.<br /><span className="text-[var(--accent)]">Scored properly.</span>
             </h2>
           </Reveal>
@@ -781,7 +781,7 @@ function Press() {
           {press.map((p, i) => (
             <Reveal key={i} delay={i * 100}>
               <blockquote className="group">
-                <div className="font-heading text-xl md:text-3xl lg:text-4xl leading-[1.25] max-w-[40ch] text-[var(--ink)]" style={{letterSpacing: "-0.015em", fontWeight: 600}}>
+                <div className="font-heading text-2xl md:text-3xl lg:text-4xl leading-[1.25] max-w-[40ch] text-[var(--ink)]" style={{letterSpacing: "-0.015em", fontWeight: 600}}>
                   <span className="text-[var(--accent)] mr-1">"</span>
                   {p.q}
                   <span className="text-[var(--accent)] ml-1">"</span>
@@ -827,7 +827,7 @@ function Book() {
               <span>Bookings</span>
               <WaveAccent bars={4} />
             </div>
-            <h2 className="font-display display-tight text-5xl md:text-7xl mb-10">
+            <h2 className="font-display display-tight text-6xl md:text-7xl mb-10">
               Tell me<br />about<br /><span className="text-[var(--accent)]">the night.</span>
             </h2>
             <p className="text-[var(--ink-dim)] leading-relaxed max-w-[38ch] mb-12">
@@ -1130,13 +1130,13 @@ function FloatingNav() {
       </div>
 
       {/* Floating pill nav — minimal three-part: MENU | wordmark | BOOK */}
-      <nav className="fixed bottom-5 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 z-50 safe-bottom">
-        <div className="nav-glass rounded-2xl md:rounded-full p-2 flex items-center justify-between md:justify-start gap-2 w-full md:w-auto">
+      <nav className="fixed bottom-4 inset-x-3 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom">
+        <div className="nav-glass rounded-2xl md:rounded-full p-1.5 md:p-2 flex items-center justify-between md:justify-start gap-1.5 md:gap-2 w-full md:w-auto">
 
           {/* Menu button — animated hamburger + label */}
           <button
             onClick={() => setOpen(!open)}
-            className="mag-btn relative bg-[var(--accent)] text-[#1a0f08] rounded-xl md:rounded-full pl-4 pr-5 py-3 flex items-center gap-2.5 font-display text-sm tracking-wide min-w-[110px] justify-center md:justify-start"
+            className="mag-btn relative bg-[var(--accent)] text-[#1a0f08] rounded-xl md:rounded-full pl-3 pr-4 py-3 md:pl-4 md:pr-5 flex items-center gap-2 md:gap-2.5 font-display text-sm tracking-wide min-w-[92px] md:min-w-[110px] justify-center md:justify-start"
           >
             <span className="flex flex-col gap-[3px] w-4">
               <span className={`block h-[2px] bg-[#1a0f08] transition-all duration-400 ease-[cubic-bezier(.2,.6,.2,1)] ${open ? "translate-y-[5px] rotate-45" : ""}`}></span>
@@ -1147,15 +1147,16 @@ function FloatingNav() {
           </button>
 
           {/* Center wordmark */}
-          <a href="#top" className="flex items-center gap-2.5 px-3 md:px-5 py-2 text-[var(--ink)] flex-shrink-0">
-            <Logo size={26} color="var(--ink)" />
+          <a href="#top" className="flex items-center gap-2 md:gap-2.5 px-2 md:px-5 py-2 text-[var(--ink)] flex-shrink-0">
+            <Logo size={24} color="var(--ink)" className="md:hidden" />
+            <Logo size={26} color="var(--ink)" className="hidden md:block" />
             <span className="font-display text-sm tracking-wide hidden xs:inline">CJ EDWARDS</span>
           </a>
 
           {/* Contact button */}
           <a
             href="#book"
-            className="mag-btn relative bg-transparent border border-[var(--line)] text-[var(--ink)] rounded-xl md:rounded-full px-4 md:px-5 py-3 font-display text-sm tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300 min-w-[80px] text-center"
+            className="mag-btn relative bg-transparent border border-[var(--line)] text-[var(--ink)] rounded-xl md:rounded-full px-3 md:px-5 py-3 font-display text-sm tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300 min-w-[68px] md:min-w-[80px] text-center"
           >
             BOOK
           </a>

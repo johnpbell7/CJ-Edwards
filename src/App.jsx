@@ -147,7 +147,7 @@ function BrandMark() {
         pointerEvents: overHero ? "auto" : "none",
       }}
     >
-      <Logo size={52} color="var(--accent)" />
+      <Logo size={68} color="var(--accent)" />
       <div className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-[var(--ink-dim)] leading-tight hidden sm:block">
         <div className="text-[var(--ink)]">CJ Edwards</div>
         <div>Selector · Producer</div>

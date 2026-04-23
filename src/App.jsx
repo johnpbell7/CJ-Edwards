@@ -334,9 +334,9 @@ function Hero() {
             DJ · Producer · Birmingham Since 2017
           </div>
 
-          <h1 className="font-display display-tight text-white">
+          <h1 className="font-display display-tight text-white md:!leading-[0.95]">
             <span className="block text-[17vw] md:text-[12vw] lg:text-[10vw]">Records for</span>
-            <span className="block text-[17vw] md:text-[12vw] lg:text-[10vw]">rooms <span className="accent-shimmer">that</span> move.</span>
+            <span className="block text-[17vw] md:text-[12vw] lg:text-[10vw] md:mt-2">rooms <span className="accent-shimmer">that</span> move.</span>
           </h1>
         </div>
 

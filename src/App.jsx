@@ -1131,24 +1131,24 @@ function FloatingNav() {
 
       {/* Floating pill nav — minimal three-part: MENU | wordmark | BOOK */}
       <nav className="fixed bottom-0 inset-x-0 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom">
-        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)]">
+        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-stretch md:items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)]">
 
           {/* Menu button — animated hamburger + label */}
           <button
             onClick={() => setOpen(!open)}
-            className="mag-btn relative bg-[var(--accent)] text-[#1a0f08] rounded-xl md:rounded-full pl-3 pr-4 py-3 md:pl-4 md:pr-5 flex items-center gap-2 md:gap-2.5 font-display text-sm tracking-wide min-w-[92px] md:min-w-[110px] justify-center md:justify-start"
+            className="mag-btn relative bg-[var(--accent)] text-[#1a0f08] rounded-xl md:rounded-full pl-4 pr-5 py-4 md:py-3 md:pl-4 md:pr-5 flex items-center gap-3 md:gap-2.5 font-display text-base md:text-sm tracking-wide flex-1 md:flex-initial min-w-[120px] md:min-w-[110px] justify-center md:justify-start"
           >
-            <span className="flex flex-col gap-[3px] w-4">
-              <span className={`block h-[2px] bg-[#1a0f08] transition-all duration-400 ease-[cubic-bezier(.2,.6,.2,1)] ${open ? "translate-y-[5px] rotate-45" : ""}`}></span>
-              <span className={`block h-[2px] bg-[#1a0f08] transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`}></span>
-              <span className={`block h-[2px] bg-[#1a0f08] transition-all duration-400 ease-[cubic-bezier(.2,.6,.2,1)] ${open ? "-translate-y-[5px] -rotate-45" : ""}`}></span>
+            <span className="flex flex-col gap-[4px] md:gap-[3px] w-5 md:w-4">
+              <span className={`block h-[2.5px] md:h-[2px] bg-[#1a0f08] transition-all duration-400 ease-[cubic-bezier(.2,.6,.2,1)] ${open ? "translate-y-[6.5px] md:translate-y-[5px] rotate-45" : ""}`}></span>
+              <span className={`block h-[2.5px] md:h-[2px] bg-[#1a0f08] transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`}></span>
+              <span className={`block h-[2.5px] md:h-[2px] bg-[#1a0f08] transition-all duration-400 ease-[cubic-bezier(.2,.6,.2,1)] ${open ? "-translate-y-[6.5px] md:-translate-y-[5px] -rotate-45" : ""}`}></span>
             </span>
             {open ? "CLOSE" : "MENU"}
           </button>
 
           {/* Center wordmark */}
           <a href="#top" className="flex items-center gap-2 md:gap-2.5 px-2 md:px-5 py-2 text-[var(--ink)] flex-shrink-0">
-            <Logo size={24} color="var(--ink)" className="md:hidden" />
+            <Logo size={32} color="var(--ink)" className="md:hidden" />
             <Logo size={26} color="var(--ink)" className="hidden md:block" />
             <span className="font-display text-sm tracking-wide hidden xs:inline">CJ EDWARDS</span>
           </a>
@@ -1156,7 +1156,7 @@ function FloatingNav() {
           {/* Contact button */}
           <a
             href="#book"
-            className="mag-btn relative bg-transparent border border-[var(--line)] text-[var(--ink)] rounded-xl md:rounded-full px-3 md:px-5 py-3 font-display text-sm tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300 min-w-[68px] md:min-w-[80px] text-center"
+            className="mag-btn relative bg-transparent border border-[var(--line)] text-[var(--ink)] rounded-xl md:rounded-full px-5 md:px-5 py-4 md:py-3 font-display text-base md:text-sm tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300 flex-1 md:flex-initial min-w-[100px] md:min-w-[80px] text-center flex items-center justify-center"
           >
             BOOK
           </a>

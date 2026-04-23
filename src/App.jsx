@@ -938,21 +938,25 @@ function Footer() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-10 items-end">
+        {/* Top block — big booking CTA + link columns */}
+        <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-24">
           <div className="md:col-span-7">
-            <a href="#top" className="group inline-flex flex-col items-start gap-4">
-              <div className="transition-transform duration-700 ease-[cubic-bezier(.2,.6,.2,1)] group-hover:rotate-[8deg] group-hover:scale-[1.03]">
-                <Logo size={420} color="var(--ink)" className="w-[70vw] md:w-[35vw] max-w-[520px] h-auto group-hover:[&>*]:fill-[var(--accent)]" />
-              </div>
-              <div className="font-display text-3xl md:text-5xl tracking-wide text-[var(--ink)] transition-colors duration-500 group-hover:text-[var(--accent)]">
-                CJ EDWARDS
-              </div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-5 flex items-center gap-2">
+              <span className="w-4 h-px bg-[var(--accent)]"></span>
+              Book direct
+            </div>
+            <a
+              href="mailto:bookings@cjedwards.co"
+              className="font-display text-3xl md:text-5xl lg:text-6xl tracking-wide text-[var(--ink)] hover:text-[var(--accent)] transition-colors duration-500 block mb-5 break-all md:break-normal"
+            >
+              bookings@cjedwards.co
             </a>
-            <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)]">
-              Selector · Producer · Birmingham · Worldwide
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)]">
+              Studio · Digbeth, Birmingham B9 · Worldwide
             </div>
           </div>
-          <div className="md:col-span-5 grid grid-cols-2 gap-8 md:pb-10">
+
+          <div className="md:col-span-5 grid grid-cols-2 gap-8">
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)] mb-4 flex items-center gap-2">
                 <span className="w-4 h-px bg-[var(--accent)]"></span>
@@ -973,19 +977,34 @@ function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#book" className="hover-link">Bookings</a></li>
                 <li><a href="#weddings" className="hover-link">Weddings</a></li>
-                <li><a href="#" className="hover-link">Privacy</a></li>
-                <li><a href="#" className="hover-link">Terms</a></li>
+                <li><a href="#mixes" className="hover-link">Mixes</a></li>
+                <li><a href="#shows" className="hover-link">Shows</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)]">
-          <div>© CJ Edwards · MMXXVI · Birmingham</div>
+
+        {/* Giant wordmark — replaces the oversized logo */}
+        <a href="#top" className="group block select-none" aria-label="Back to top">
+          <div
+            className="font-display tracking-[-0.02em] leading-[0.82] text-[var(--ink)] transition-colors duration-700 group-hover:text-[var(--accent)]"
+            style={{ fontSize: "clamp(72px, 22vw, 320px)" }}
+          >
+            CJ EDWARDS
+          </div>
+        </a>
+
+        {/* Bottom row — monogram + meta */}
+        <div className="mt-10 pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-start md:items-center gap-5 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)]">
+          <div className="flex items-center gap-3">
+            <Logo size={22} color="var(--ink-mute)" />
+            <span>© CJ Edwards · MMXXVI · Birmingham</span>
+          </div>
           <div className="flex items-center gap-3">
             <WaveAccent bars={4} />
             <span>Studio transmission no. 001</span>
           </div>
-          <div>Built with long nights & short records</div>
+          <div>Built with long nights &amp; short records</div>
         </div>
       </div>
     </footer>

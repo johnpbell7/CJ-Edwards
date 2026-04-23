@@ -809,53 +809,64 @@ function Book() {
   };
 
   return (
-    <section id="book" className="relative px-5 md:px-10 py-28 md:py-40 border-t border-[var(--line)] bg-[var(--bg-2)] overflow-hidden">
+    <section id="book" className="book-section relative px-5 md:px-10 py-28 md:py-40 border-t border-[rgba(26,15,8,0.18)] bg-[var(--accent)] overflow-hidden">
+      {/* Warm-white radial glow top-right and dark glow bottom-left — both read on orange */}
       <div
-        className="ambient-glow"
+        className="absolute pointer-events-none"
         style={{
-          width: "55vw", height: "55vw", bottom: "-20%", right: "-15%",
-          background: "radial-gradient(circle, rgba(232,103,60,0.6) 0%, transparent 65%)",
-          animation: "ambientA 10s ease-in-out infinite"
+          width: "60vw", height: "60vw", top: "-15%", right: "-15%",
+          background: "radial-gradient(circle, rgba(255,225,190,0.45) 0%, transparent 65%)",
+          filter: "blur(70px)",
+          animation: "ambientA 10s ease-in-out infinite",
+        }}
+      ></div>
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: "55vw", height: "55vw", bottom: "-22%", left: "-18%",
+          background: "radial-gradient(circle, rgba(26,15,8,0.55) 0%, transparent 65%)",
+          filter: "blur(80px)",
+          animation: "ambientB 12s ease-in-out infinite",
         }}
       ></div>
 
-      <div className="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16">
+      <div className="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 text-[#1a0f08]">
         <div className="md:col-span-5">
           <Reveal>
-            <div className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--ink-dim)] mb-8 flex items-center gap-3">
-              <span className="text-[var(--accent)]">06 —</span>
+            <div className="font-mono text-xs uppercase tracking-[0.3em] text-[rgba(26,15,8,0.78)] mb-8 flex items-center gap-3">
+              <span className="text-[#1a0f08] font-semibold">06 —</span>
               <span>Bookings</span>
               <WaveAccent bars={4} />
             </div>
-            <h2 className="font-display display-tight text-[16vw] md:text-7xl mb-10">
-              Tell me<br />about<br /><span className="text-[var(--accent)]">the night.</span>
+            <h2 className="font-display display-tight text-[16vw] md:text-7xl mb-10 text-[#1a0f08]">
+              Tell me<br />about<br /><span className="text-white">the night.</span>
             </h2>
-            <p className="text-[var(--ink-dim)] leading-relaxed max-w-[38ch] mb-12">
+            <p className="text-[rgba(26,15,8,0.85)] leading-relaxed max-w-[38ch] mb-12 text-base md:text-lg">
               Quickest reply is direct — but this form works too. Expect a response within 48 hours, often same day.
             </p>
 
             <div className="space-y-4 font-mono text-sm">
               <div className="flex gap-4">
-                <span className="text-[var(--ink-mute)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Direct</span>
-                <a href="mailto:bookings@cjedwards.co" className="hover-link text-[var(--ink)]">
+                <span className="text-[rgba(26,15,8,0.6)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Direct</span>
+                <a href="mailto:bookings@cjedwards.co" className="hover-link text-[#1a0f08] font-semibold">
                   bookings@cjedwards.co
                 </a>
               </div>
               <div className="flex gap-4">
-                <span className="text-[var(--ink-mute)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Agent</span>
-                <a href="mailto:anna@bluestream.agency" className="hover-link text-[var(--ink)]">
+                <span className="text-[rgba(26,15,8,0.6)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Agent</span>
+                <a href="mailto:anna@bluestream.agency" className="hover-link text-[#1a0f08]">
                   anna@bluestream.agency
                 </a>
               </div>
               <div className="flex gap-4">
-                <span className="text-[var(--ink-mute)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Wedding</span>
-                <a href="mailto:weddings@cjedwards.co" className="hover-link text-[var(--ink)]">
+                <span className="text-[rgba(26,15,8,0.6)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Wedding</span>
+                <a href="mailto:weddings@cjedwards.co" className="hover-link text-[#1a0f08]">
                   weddings@cjedwards.co
                 </a>
               </div>
               <div className="flex gap-4">
-                <span className="text-[var(--ink-mute)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Studio</span>
-                <span className="text-[var(--ink)]">Digbeth, Birmingham B9</span>
+                <span className="text-[rgba(26,15,8,0.6)] w-20 text-xs uppercase tracking-[0.2em] pt-1">Studio</span>
+                <span className="text-[#1a0f08]">Digbeth, Birmingham B9</span>
               </div>
             </div>
           </Reveal>
@@ -863,9 +874,17 @@ function Book() {
 
         <div className="md:col-span-7">
           <Reveal delay={100}>
-            <div className="space-y-0">
+            <div className="bg-[rgba(26,15,8,0.06)] border border-[rgba(26,15,8,0.18)] rounded-2xl p-6 md:p-10 backdrop-blur-sm">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="radar-ping" style={{ filter: "hue-rotate(180deg) saturate(0)" }}></span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#1a0f08] font-semibold">Enquiry form · 48h reply</span>
+              </div>
+              <div className="font-display text-3xl md:text-4xl mb-8 leading-[0.95] text-[#1a0f08]">
+                Fill this in,<br />I'll get back.
+              </div>
+
               <div className="mb-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)] mb-4">Type of booking</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[rgba(26,15,8,0.7)] mb-4">Type of booking</div>
                 <div className="flex flex-wrap gap-2">
                   {["Club / festival", "Wedding", "Private / corporate", "Studio / collab"].map((t) => (
                     <button
@@ -873,8 +892,8 @@ function Book() {
                       onClick={() => setType(t)}
                       className={`press px-4 py-2 text-xs font-mono uppercase tracking-[0.2em] border transition-all duration-300 ${
                         type === t
-                          ? "border-[var(--accent)] bg-[var(--accent)] text-[#1a0f08]"
-                          : "border-[var(--line)] text-[var(--ink-dim)] hover:border-[var(--ink-dim)] hover:text-[var(--ink)]"
+                          ? "border-[#1a0f08] bg-[#1a0f08] text-[var(--accent)]"
+                          : "border-[rgba(26,15,8,0.35)] text-[rgba(26,15,8,0.78)] hover:border-[#1a0f08] hover:text-[#1a0f08]"
                       }`}
                     >
                       {t}
@@ -891,11 +910,11 @@ function Book() {
               <textarea placeholder="Tell me about the night — vibe, set length, anything that matters." rows="4" className="input-bare resize-none"></textarea>
 
               <div className="pt-8 flex flex-wrap items-center gap-6">
-                <MagneticButton onClick={handleSubmit}>
+                <MagneticButton onClick={handleSubmit} className="!bg-[#1a0f08] !text-[var(--accent)]">
                   {sent ? "RECEIVED — TALK SOON" : "SEND ENQUIRY"}
                   {!sent && <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h14M11 1l4 4-4 4" stroke="currentColor" strokeWidth="2"/></svg>}
                 </MagneticButton>
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--ink-mute)] max-w-[28ch] leading-relaxed">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[rgba(26,15,8,0.65)] max-w-[28ch] leading-relaxed">
                   By sending you agree to the privacy policy. Nothing shared, nothing spammy.
                 </span>
               </div>

@@ -478,3 +478,16 @@
   @media (max-width: 640px) {
     .display-tight { letter-spacing: 0; line-height: 0.88; }
   }
+
+  /* Booking section — dark-on-amber overrides */
+  .book-section .input-bare {
+    color: #1a0f08;
+    border-bottom-color: rgba(26,15,8,0.28);
+    caret-color: #1a0f08;
+    font-weight: 500;
+  }
+  .book-section .input-bare::placeholder { color: rgba(26,15,8,0.55); }
+  .book-section .input-bare:focus { border-bottom-color: #1a0f08; }
+  .book-section .wave-accent span { background: #1a0f08; }
+  .book-section .radar-ping::before,
+  .book-section .radar-ping::after { background: #1a0f08; }

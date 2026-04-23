@@ -1188,7 +1188,7 @@ function FloatingNav() {
       <nav
         className={`fixed bottom-0 inset-x-0 md:inset-x-auto md:bottom-5 md:left-1/2 md:-translate-x-1/2 z-[60] safe-bottom transition-transform duration-500 ease-[cubic-bezier(.2,.6,.2,1)] ${hidden ? "translate-y-full" : "translate-y-0"}`}
       >
-        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)] max-w-full overflow-hidden">
+        <div className="nav-glass rounded-none md:rounded-full px-3 py-3 md:p-2 flex items-center justify-between md:justify-start gap-2 md:gap-2 w-full md:w-auto border-t md:border border-[var(--line)]">
 
           {/* Menu button — animated hamburger + label */}
           <button
